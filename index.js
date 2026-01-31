@@ -22,3 +22,15 @@ event
   .finally(() => {
     console.log("promise fulfilled");
   });
+
+const axios = require("axios");
+//fetching data will return a promise
+// wait for data to do something
+const data = axios.get("https://cat-fact.herokuapp.com/facts");
+data
+  .then((res) => {
+    console.log(res.data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
